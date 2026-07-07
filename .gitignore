@@ -1,0 +1,7 @@
+.env
+src/db/
+src/tmp/
+__pycache__/
+*.pyc
+.eslintcache
+src/rest/mydatabase

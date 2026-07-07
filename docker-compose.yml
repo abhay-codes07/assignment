@@ -16,6 +16,10 @@ services:
     build: .
     container_name: app
     command: bash -c "cd /src/app && yarn install && yarn start"
+    environment:
+      # inotify events don't cross Windows/macOS bind mounts, so webpack has to
+      # poll or hot reload never triggers
+      - CHOKIDAR_USEPOLLING=true
     ports:
       - "3000:3000"
     volumes:
